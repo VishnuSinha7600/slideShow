@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        div#container{
+            width: 1300px;
+            height: 500px;
+            margin: auto;
+        }
+
+
+        img{
+            width: 1300px;
+            height: 500px;
+        }
+    
+        #btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+
+        }
+
+        button{
+            padding: 10px 30px;
+            margin-left: 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 17px;
+            font-weight: 700;
+            box-shadow: 1px 1px 4px black;
+        }
+
+
+    </style>
+
+    
+</head>
+<body>
+    
+    <div id="container">
+        <img src="https://t4.ftcdn.net/jpg/05/47/97/81/360_F_547978128_vqEEUYBr1vcAwfRAqReZXTYtyawpgLcC.jpg" alt=""/>
+
+    </div>
+
+    <div id="btn">
+        <button onclick="startbtn()">Start</button>
+        <button onclick="stopbtn()">Stop</button>
+    </div>
+
+</body>
+
+<script>
+
+let images = [
+    "https://wallpapers.com/images/featured/nature-2ygv7ssy2k0lxlzu.jpg",
+    "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg",
+    "https://i0.wp.com/picjumbo.com/wp-content/uploads/magical-spring-forest-scenery-during-morning-breeze-free-photo.jpg?w=600&quality=80",
+    "https://media.istockphoto.com/id/1488944909/photo/environment-concept-green-glass-globe-with-a-tree-in-the-forest-with-sunlight-sustainability.webp?b=1&s=170667a&w=0&k=20&c=f89zMjUr7FldJzgS0p8mJyuTxBWgvhv0kBQL7fcSnjs=",
+    "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80",
+    "https://t4.ftcdn.net/jpg/05/47/97/81/360_F_547978128_vqEEUYBr1vcAwfRAqReZXTYtyawpgLcC.jpg"
+    
+]
+
+let i = 0;
+let intervalId;
+
+function startbtn(){
+    let slideImg = document.querySelector("img");
+
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+
+    intervalId = setInterval(function () {
+
+        if(i == images.length)i = 0;
+
+        slideImg.src = images[i++];
+
+    }, 1000)
+
+}
+function stopbtn(){
+    clearInterval(intervalId)
+}
+
+
+
+</script>
+</html>
